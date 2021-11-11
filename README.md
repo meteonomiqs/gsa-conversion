@@ -45,12 +45,31 @@ Register on Meteonomiqs by providing the `Conversion ID` and the 5 conversion la
 <- Dhivya for details
 
 ### Step 4: Configure adwords tag
-Add the adwords template to your Google Tag Manager.
-<- Dhivya for details
+
+Import the Adwords template manually or from the solutions gallery. Click on 'Save'.
+
+
+
+Create a new tag. Choose the above template which will be available under the custom section. Provide the API key you received during registration. Choose the tag firing option to 'Once per page'. Do not add any trigger at this point. Name the tag as 'Search Weather Tag' and click on Save.
+
+
+
+Create a new tag. Choose the tag type as 'Conversion linker'. A Conversion linker tag is used to detect the ad click information in your conversion page URL. Fire this tag on any page where your visitors may land after they click your ad or promotion. Leave the tag firing option to 'Once per event'. Click on tag sequencing and select 'Fire a tag after Conversion Linker fires' and add the 'Search Weather Tag' as the clean up tag. This ensures the 'Search Weather Tag' is fired immediately after the conversion linker tag is fired.
+
+
+
+Note: If you have a consent management platform, ensure this tag is fired only when there is consent for Google Ads conversion tracking.
 
 ### Step 5: Configure conversion tag
+
 Add the conversion template similar to your current conversion tracking in Google Tag Manager. For testing, we recommend to keep the current conversion tracking.
-<- Dhivya for details
+
+Import the conversion template manually or from the solutions gallery. Click on 'Save'.
+
+
+
+Create a new tag. Choose the above template which will be available under the custom section. Provide the API key you received during registration. Provide the conversion value (eg. 1). Triggers for this tag should be added similar to your existing conversion tracking. 
+
 
 ## Usage
 In Google Ads open an existing campaign or create a new one.
