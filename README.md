@@ -1,6 +1,6 @@
 # WeatherTag4Search - conversion tag
 
-** THIS SOLUTION IS CURRENTLY IN CLOSED BETA **
+**THIS SOLUTION IS CURRENTLY IN CLOSED BETA**
 
 Google Tag Manager (GTM) Solution for improving Google Search adwords conversions using high quality weather
 provided by https://wetter.com
@@ -9,7 +9,7 @@ The solution consists of two tags:
 * the adwords tag, see https://github.com/meteonomiqs/gsa-adwords
 * this conversion tag
 
-** Note: To be able to use this solution you must register for an API key at {TODO: landing page}**
+**Note: To be able to use this solution you must register for an API key at {TODO: landing page}**
 
 
 ## Setup
