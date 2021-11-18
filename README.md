@@ -1,4 +1,6 @@
-# {TODO: PRODUCT NAME} - conversion tag
+# WeatherTag4Search - conversion tag
+
+** THIS SOLUTION IS CURRENTLY IN CLOSED BETA **
 
 Google Tag Manager (GTM) Solution for improving Google Search adwords conversions using high quality weather
 provided by https://wetter.com
