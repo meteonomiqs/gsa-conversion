@@ -18,7 +18,7 @@ We describe how weather is integrated into Google Ads. The overall idea is to us
 
 The installation and configuration consists of the following steps
 
-### Step 1: Setup Google Ads {TODO: exact wording?}
+### Step 1: Setup Google Ads 
 In Google Ads, go to `Tools & Settings / Measurement / Conversions`.
 Create 5 new conversion actions (e.g. good, decent, bad, unknown and weather_test), 4 are used as weather conversions and one conversion (weather_test) is for the AB-test.
 The setting for each conversion should fit your business and can be used from your already used conversions.
@@ -44,7 +44,39 @@ Create a `new custom goal` ("weather_conversion") by selecting the 4 weather con
 Register on Meteonomiqs by providing the `Conversion ID` and the 5 conversion labels.
 
 ### Step 3: Integrate with your Consent Management
-<- Dhivya for details
+
+What we need consent for:
+* The tag sends the Google ClickId from an AdWords click to our backed
+* From the request, the IP address is used to derive the location (latitude, longitude) for determining the weather at that location. Then the IP address is discarded
+* Google ClickId, location, weather information, and timestamp are stored in our backend
+* In case of a later conversion, another request with the Google ClickId and a conversion value is send to our backend, the weather information
+* Google ClickID, conversion value and original weather information are sent to Google AdWords and stored in our backend
+#### CMP configuration
+
+An easy way is to add wetter.com Gmbh (meteonomiqs is a brand of wetter.com GmbH) as non IAB Vendor to your CMP (TCF2.0).
+
+* Description: **If a user clicks on a Google ad and lands on the customer page, we determine the weather at the location derived from the IP address. If later a conversion happens, the conversion value is sent together with the original weather information to Google AdWords.
+  Google ClickID, conversion value and original weather information are sent to Google AdWords and stored in our backend for the retention period defined during registration plus 10 days grace period.**
+* Name of processing company: **meteonomiqs.com  / wetter.com  GmbH**
+* Address of processing company: **Reichenaustr. 19a, 78467 Konstanz**
+* Puposes: **Weather based conversion improvements**
+* Data Collected: **Location based on the IP address, Google Click ID, Conversion Value**
+* Technologies Used: **server-side storage: AWS DynamoDB**
+* Cookie URL: **-**
+* Location of Processing: **European Union**
+* Retention Period
+  * Cookie: **no cookie is set**
+  * Server-side: **Google ClickId, weather, location, conversion value, and timestamp: as defined during registration + 10 days grace period** 
+* Policy of Procesor : **Data privacy https://www.meteonomiqs.com/data-privacy/**
+* Data Protection Officer: **datenschutz@wetter.com**
+* Storage information: **TBD**
+
+If you are using a CMP prior to TCF2.0 or some other consent solution, please include the above information in your privacy statement as needed.
+
+#### Tag configuration for respection user consent
+
+@Dhivya: PLEASE FILL IN HERE
+
 
 ### Step 4: Configure adwords tag
 
