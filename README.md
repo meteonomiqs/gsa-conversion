@@ -69,7 +69,7 @@ An easy way is to add wetter.com Gmbh (meteonomiqs is a brand of wetter.com GmbH
   * Server-side: **Google ClickId, weather, location, conversion value, and timestamp: as defined during registration + 10 days grace period** 
 * Policy of Procesor : **Data privacy https://www.meteonomiqs.com/data-privacy/**
 * Data Protection Officer: **datenschutz@wetter.com**
-* Storage information: **TBD**
+* Storage information: **-**
 
 If you are using a CMP prior to TCF2.0 or some other consent solution, please include the above information in your privacy statement as needed.
 
