@@ -51,6 +51,7 @@ What we need consent for:
 * Google ClickId, location, weather information, and timestamp are stored in our backend
 * In case of a later conversion, another request with the Google ClickId and a conversion value is send to our backend, the weather information
 * Google ClickID, conversion value and original weather information are sent to Google AdWords and stored in our backend
+
 #### CMP configuration
 
 An easy way is to add wetter.com Gmbh (meteonomiqs is a brand of wetter.com GmbH) as non IAB Vendor to your CMP (TCF2.0).
@@ -73,11 +74,6 @@ An easy way is to add wetter.com Gmbh (meteonomiqs is a brand of wetter.com GmbH
 
 If you are using a CMP prior to TCF2.0 or some other consent solution, please include the above information in your privacy statement as needed.
 
-#### Tag configuration for respection user consent
-
-@Dhivya: PLEASE FILL IN HERE
-
-
 ### Step 4: Configure adwords tag
 
 Import the Adwords template manually or from the solutions gallery. Click on 'Save'.
@@ -86,13 +82,26 @@ Import the Adwords template manually or from the solutions gallery. Click on 'Sa
 
 Create a new tag. Choose the above template which will be available under the custom section. Provide the API key you received during registration. Choose the tag firing option to 'Once per page'. Do not add any trigger at this point. Name the tag as 'Search Weather Tag' and click on Save.
 
+![image](https://user-images.githubusercontent.com/65337449/143875642-0acdb370-ab32-445d-ad6c-3b68e9264a63.png)
+
+Create a new tag. Choose the tag type as 'Conversion linker'. A Conversion linker tag is used to detect the ad click information in your conversion page URL. Fire this tag on any page where your visitors may land after they click your ad or promotion. Leave the tag firing option to 'Once per event'. Click on tag sequencing and select 'Fire a tag after Conversion Linker fires' and add the 'Search Weather Tag' as the clean up tag. This ensures the 'Search Weather Tag' is fired immediately after the conversion linker tag is fired. Since the tag is added as clean up tag, no trigger conditions or exceptions will be evaluated before firing the tag. Please ensure to respect user consent by using the CMP status field. 
+
+![image](https://user-images.githubusercontent.com/65337449/143874832-7b216d80-e324-45ba-9bba-2978f085f292.png)
 
 
-Create a new tag. Choose the tag type as 'Conversion linker'. A Conversion linker tag is used to detect the ad click information in your conversion page URL. Fire this tag on any page where your visitors may land after they click your ad or promotion. Leave the tag firing option to 'Once per event'. Click on tag sequencing and select 'Fire a tag after Conversion Linker fires' and add the 'Search Weather Tag' as the clean up tag. This ensures the 'Search Weather Tag' is fired immediately after the conversion linker tag is fired.
+Note: If you have a consent management platform, to respect user consent by using the CMP Status form in the tag (described below). If no consent is needed, please add the value true in the field.
 
 
+#### Tag configuration for respection user consent
 
-Note: If you have a consent management platform, ensure this tag is fired only when there is consent for Google Ads conversion tracking.
+To respect user consent, please pass your CMP status in the tag by adding a variable that contain the CMP status.
+
+![image](https://user-images.githubusercontent.com/65337449/143872668-0897739a-63b3-483e-89b8-10e192de4a77.png)
+
+The tag fires as configured in GTM but no cookies will be read or requests will send, if the value of this variable is not the boolean true.
+
+Important: The tag after the tag has fired but no consent was given, the tag will not send any information. In this case, please fire the tag again, after consent was given.
+
 
 ### Step 5: Configure conversion tag
 
@@ -100,9 +109,11 @@ Add the conversion template similar to your current conversion tracking in Googl
 
 Import the conversion template manually or from the solutions gallery. Click on 'Save'.
 
-
+![image](https://user-images.githubusercontent.com/65337449/143876354-36355554-2096-446c-86e7-c741db81b7b6.png)
 
 Create a new tag. Choose the above template which will be available under the custom section. Provide the API key you received during registration. Provide the conversion value (eg. 1). Triggers for this tag should be added similar to your existing conversion tracking. 
+
+Important: The Conversion Tag is working with the CMP Status field as well. Please pass the CMP Status to the tag (boolean value true) in order to send requests or read cookie values.
 
 
 ## Usage
