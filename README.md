@@ -9,7 +9,7 @@ The solution consists of two tags:
 * the adwords tag, see https://github.com/meteonomiqs/gsa-adwords
 * this conversion tag
 
-**Note: To be able to use this solution you must register for an API key at {TODO: landing page}**
+**Note: To be able to use this solution you must register for an API key at https://www.meteonomiqs.com/weather-tag-for-google-ads/**
 
 
 ## Setup
@@ -40,7 +40,8 @@ In the Tag setup select `Use Google Tag Manager`. Write down the `conversion lab
 
 Finally create a `new custom goal` ("weather_conversion") by selecting the 4 weather conversion actions.
 
-### Step 2: Register at {TODO: landing page}
+### Step 2: Register at https://www.meteonomiqs.com/weather-tag-for-google-ads/
+
 Register on Meteonomiqs by providing the `Conversion ID` and the 5 conversion labels.
 
 ### Step 3: Integrate with your Consent Management
