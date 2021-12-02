@@ -20,7 +20,7 @@ The installation and configuration consists of the following steps
 
 ### Step 1: Setup Google Ads 
 In Google Ads, go to `Tools & Settings / Measurement / Conversions`.
-Create 5 new conversion actions (e.g. good, decent, bad, unknown and weather_test), 4 are used as weather conversions and one conversion (base_test) is for the AB-test.
+Create 5 new conversion actions (e.g. weather - good, weather - decent, weather - bad, weather - unknown and weather - test), 4 are used as weather conversions and one conversion (weather - test) is for the AB-test.
 The setting for each conversion should fit your business and can be replicated from your already used conversions.
 In case you do not have a conversion, you can use the following set of parameters:
 - Value: Use different values for each conversion
@@ -38,7 +38,7 @@ In the Tag setup select `Use Google Tag Manager`. Write down the `conversion lab
 - weather_test: VAB12CDefg....
 - Conversion ID: 123456789
 
-Finally create a `new custom goal` ("weather_conversion") by selecting the 4 weather conversion actions.
+Finally create a `new custom goal` ("weather - conversion") by selecting the 4 weather conversion actions.
 
 ### Step 2: Register at https://www.meteonomiqs.com/weather-tag-for-google-ads/
 
@@ -123,4 +123,4 @@ Important: The Conversion Tag is working with the CMP Status field as well. Plea
 In Google Ads open an existing campaign or create a new one.
 Create an AB-Test for this campaign by clicking on `Show more` and select `Drafts & Experiments`.
 In Campaign drafts, create a new draft and then create a new experiment based on the draft.
-Finally select in `Settings` the `Goals` of the campaign to base_test (for the reference group) and to weather_test (for the test group) and start the test.
+Finally select in `Settings` the `Goals` of the campaign to weather - test (for the reference group) and to weather - conversion (for the test group) and start the test.
