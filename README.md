@@ -28,7 +28,9 @@ In case you do not have a conversion, you can use the following set of parameter
 - Click-through conversion window: 7 days
 - Engaged-view conversion window: 3 days
 - View-through conversion window: 1 day
+- Include in "Conversions": No
 - Attribution model: Linear
+ 
 
 In the Tag setup select `Use Google Tag Manager`. Write down the `conversion labels` for each `conversion action` and the `Conversion ID`:
 - good: ZAB12CDefg....
