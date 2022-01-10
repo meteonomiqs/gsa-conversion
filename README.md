@@ -44,7 +44,7 @@ Finally create a `new custom goal` ("weather - conversion") by selecting the 4 w
 
 ### Step 2: Register at https://www.meteonomiqs.com/weather-tag-for-google-ads/
 
-Register on Meteonomiqs by providing the `Conversion ID` and the 5 conversion labels and the Click-through conversion window of adclicks that should be taken into account.
+Register on Meteonomiqs by providing the `Conversion ID`, the 5 conversion labels and the Click-through conversion window of adclicks that should be taken into account.
 
 **If you need support on the setup, please leave a comment in the formular and we will assists you with the configuration.**
 
